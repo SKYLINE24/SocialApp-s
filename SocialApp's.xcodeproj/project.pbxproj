@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1A0A0F293BCCD500ECCE61 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A0E293BCCD500ECCE61 /* FirebaseAuth */; };
+		2D1A0A11293BCCD500ECCE61 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A10293BCCD500ECCE61 /* FirebaseFirestore */; };
+		2D1A0A13293BCCD500ECCE61 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A12293BCCD500ECCE61 /* FirebaseStorage */; };
+		2D1A0A16293BCD2B00ECCE61 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A15293BCD2B00ECCE61 /* SDWebImage */; };
+		2D1A0A18293BCD2B00ECCE61 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A17293BCD2B00ECCE61 /* SDWebImageMapKit */; };
+		2D1A0A1A293BCD7200ECCE61 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A0A19293BCD7200ECCE61 /* GoogleService-Info-2.plist */; };
 		2D32B53B292F52BB00129BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53A292F52BB00129BAB /* AppDelegate.swift */; };
 		2D32B53D292F52BB00129BAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53C292F52BB00129BAB /* SceneDelegate.swift */; };
 		2D32B53F292F52BB00129BAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53E292F52BB00129BAB /* ViewController.swift */; };
@@ -16,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1A0A19293BCD7200ECCE61 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
 		2D32B537292F52BB00129BAB /* SocialApp's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialApp's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D32B53A292F52BB00129BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D32B53C292F52BB00129BAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +38,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A0A0F293BCCD500ECCE61 /* FirebaseAuth in Frameworks */,
+				2D1A0A18293BCD2B00ECCE61 /* SDWebImageMapKit in Frameworks */,
+				2D1A0A11293BCCD500ECCE61 /* FirebaseFirestore in Frameworks */,
+				2D1A0A16293BCD2B00ECCE61 /* SDWebImage in Frameworks */,
+				2D1A0A13293BCCD500ECCE61 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,7 @@
 				2D32B543292F52BC00129BAB /* Assets.xcassets */,
 				2D32B545292F52BC00129BAB /* LaunchScreen.storyboard */,
 				2D32B548292F52BC00129BAB /* Info.plist */,
+				2D1A0A19293BCD7200ECCE61 /* GoogleService-Info-2.plist */,
 			);
 			path = "SocialApp's";
 			sourceTree = "<group>";
@@ -83,6 +96,13 @@
 			dependencies = (
 			);
 			name = "SocialApp's";
+			packageProductDependencies = (
+				2D1A0A0E293BCCD500ECCE61 /* FirebaseAuth */,
+				2D1A0A10293BCCD500ECCE61 /* FirebaseFirestore */,
+				2D1A0A12293BCCD500ECCE61 /* FirebaseStorage */,
+				2D1A0A15293BCD2B00ECCE61 /* SDWebImage */,
+				2D1A0A17293BCD2B00ECCE61 /* SDWebImageMapKit */,
+			);
 			productName = "SocialApp's";
 			productReference = 2D32B537292F52BB00129BAB /* SocialApp's.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,10 @@
 				Base,
 			);
 			mainGroup = 2D32B52E292F52BB00129BAB;
+			packageReferences = (
+				2D1A0A0D293BCCD500ECCE61 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2D1A0A14293BCD2B00ECCE61 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 2D32B538292F52BB00129BAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +151,7 @@
 			files = (
 				2D32B547292F52BC00129BAB /* LaunchScreen.storyboard in Resources */,
 				2D32B544292F52BC00129BAB /* Assets.xcassets in Resources */,
+				2D1A0A1A293BCD7200ECCE61 /* GoogleService-Info-2.plist in Resources */,
 				2D32B542292F52BB00129BAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +383,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D1A0A0D293BCCD500ECCE61 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2D1A0A14293BCD2B00ECCE61 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D1A0A0E293BCCD500ECCE61 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D1A0A0D293BCCD500ECCE61 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2D1A0A10293BCCD500ECCE61 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D1A0A0D293BCCD500ECCE61 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2D1A0A12293BCCD500ECCE61 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D1A0A0D293BCCD500ECCE61 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		2D1A0A15293BCD2B00ECCE61 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D1A0A14293BCD2B00ECCE61 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		2D1A0A17293BCD2B00ECCE61 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D1A0A14293BCD2B00ECCE61 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D32B52F292F52BB00129BAB /* Project object */;
 }
