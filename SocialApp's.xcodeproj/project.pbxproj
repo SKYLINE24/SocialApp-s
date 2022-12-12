@@ -13,6 +13,10 @@
 		2D1A0A16293BCD2B00ECCE61 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A15293BCD2B00ECCE61 /* SDWebImage */; };
 		2D1A0A18293BCD2B00ECCE61 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A17293BCD2B00ECCE61 /* SDWebImageMapKit */; };
 		2D1A0A1A293BCD7200ECCE61 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A0A19293BCD7200ECCE61 /* GoogleService-Info-2.plist */; };
+		2D2F1242294783AF000C7901 /* PaylasimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F1241294783AF000C7901 /* PaylasimVC.swift */; };
+		2D2F1244294783F1000C7901 /* ProfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F1243294783F1000C7901 /* ProfilVC.swift */; };
+		2D2F124629478442000C7901 /* YuklemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F124529478442000C7901 /* YuklemeVC.swift */; };
+		2D2F124829478466000C7901 /* AramaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F124729478466000C7901 /* AramaVC.swift */; };
 		2D32B53B292F52BB00129BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53A292F52BB00129BAB /* AppDelegate.swift */; };
 		2D32B53D292F52BB00129BAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53C292F52BB00129BAB /* SceneDelegate.swift */; };
 		2D32B53F292F52BB00129BAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D32B53E292F52BB00129BAB /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		2D1A0A19293BCD7200ECCE61 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		2D2F1241294783AF000C7901 /* PaylasimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylasimVC.swift; sourceTree = "<group>"; };
+		2D2F1243294783F1000C7901 /* ProfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilVC.swift; sourceTree = "<group>"; };
+		2D2F124529478442000C7901 /* YuklemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YuklemeVC.swift; sourceTree = "<group>"; };
+		2D2F124729478466000C7901 /* AramaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AramaVC.swift; sourceTree = "<group>"; };
 		2D32B537292F52BB00129BAB /* SocialApp's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialApp's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D32B53A292F52BB00129BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D32B53C292F52BB00129BAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,10 @@
 				2D32B53A292F52BB00129BAB /* AppDelegate.swift */,
 				2D32B53C292F52BB00129BAB /* SceneDelegate.swift */,
 				2D32B53E292F52BB00129BAB /* ViewController.swift */,
+				2D2F1241294783AF000C7901 /* PaylasimVC.swift */,
+				2D2F1243294783F1000C7901 /* ProfilVC.swift */,
+				2D2F124529478442000C7901 /* YuklemeVC.swift */,
+				2D2F124729478466000C7901 /* AramaVC.swift */,
 				2D32B540292F52BB00129BAB /* Main.storyboard */,
 				2D32B543292F52BC00129BAB /* Assets.xcassets */,
 				2D32B545292F52BC00129BAB /* LaunchScreen.storyboard */,
@@ -163,9 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2F1244294783F1000C7901 /* ProfilVC.swift in Sources */,
+				2D2F1242294783AF000C7901 /* PaylasimVC.swift in Sources */,
 				2D32B53F292F52BB00129BAB /* ViewController.swift in Sources */,
 				2D32B53B292F52BB00129BAB /* AppDelegate.swift in Sources */,
 				2D32B53D292F52BB00129BAB /* SceneDelegate.swift in Sources */,
+				2D2F124629478442000C7901 /* YuklemeVC.swift in Sources */,
+				2D2F124829478466000C7901 /* AramaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
