@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                 if error != nil{
                     self.hataMesaji(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata aldınız. Tekrar deneyiniz")
                 }else{
-                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                    self.performSegue(withIdentifier: "toPaylasimlarVC", sender: nil)
                 }
             }
         }
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 if error != nil{
                     self.hataMesaji(titleInput: "Hata", messageInput: error!.localizedDescription)
                 }else{
-                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                    self.performSegue(withIdentifier: "toPaylasimlarVC", sender: nil)
                 }
             }
         }else{
