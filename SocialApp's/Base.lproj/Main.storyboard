@@ -123,6 +123,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Paylaş"/>
+                                <connections>
+                                    <action selector="paylasTiklandi:" destination="FUY-ab-pHW" eventType="touchUpInside" id="ihl-K3-yd7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nEU-Ym-wxk"/>
@@ -141,6 +144,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Yükleme" image="shared.with.you" catalog="system" id="U2p-6S-Y0d"/>
+                    <connections>
+                        <outlet property="aciklamaTextField" destination="FXV-V4-o4D" id="ezI-yx-Lvw"/>
+                        <outlet property="imageView" destination="VJR-ls-1qo" id="RKs-WA-159"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlB-DJ-MdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
