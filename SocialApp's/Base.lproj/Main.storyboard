@@ -251,6 +251,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Paylaşımlar" image="shareplay" catalog="system" id="xtm-qg-TUz"/>
+                    <connections>
+                        <outlet property="tableView" destination="F7H-1B-IAx" id="aSI-MS-avp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmh-ac-OmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,6 +386,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Çıkış Yap"/>
                                 <connections>
+                                    <action selector="cikisYapTiklandi:" destination="dOO-kR-VmY" eventType="touchUpInside" id="2eH-RH-2h6"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="uZJ-dI-Ehm"/>
                                 </connections>
                             </button>
