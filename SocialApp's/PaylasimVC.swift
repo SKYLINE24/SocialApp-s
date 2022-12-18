@@ -50,7 +50,17 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }  //databasedeki post klasörüne kulaşabiliyorum şuan
         
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postDizisi.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!        //feed kısmındaki başlangıçta gösterilecekleri ayarladık
+        cell.emailText.text = postDizisi[indexPath.row].email
+        cell.yorumText.text = postDizisi[indexPath.row].yorum
+        cell.postImageView.sd_setImage(with: URL(string: self.postDizisi[indexPath.row].gorselUrl))
+        return cell
+    }
     
 
 }
