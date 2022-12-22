@@ -27,12 +27,12 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         firestoreDatabase.collection("Post").order(by: "tarih", descending: true)
             .addSnapshotListener { (snapshot, error) in
-            
+            //Firestoredaki döküman çekme işlemini burda gerçekleştirdik
             if error != nil{
                 print(error?.localizedDescription)
             }else{
-                if snapshot?.isEmpty != true && snapshot != nil{
-                    //her feed sayfasına geçtiğinde üstüne ekleyecek olduğu için silip aşşağıda tekrar yüklenmesini sağlıyoruz
+                if snapshot?.isEmpty != true && snapshot != nil{//snapshat boş mu değil mi burada onu kontrol ediyoruz
+                    //her feed sayfasına geçtiğinde üstüne ekleyecek olduğu için silip aşşağıda tekrar yüklenmesini sağlıyoruz aşşağıdaki kod ile
                     self.postDizisi.removeAll(keepingCapacity: false)
                     for document in snapshot!.documents{
                         if let gorselUrl = document.get("gorselUrl") as? String{
@@ -50,12 +50,12 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }  //databasedeki post klasörüne kulaşabiliyorum şuan
         
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//kaç satırımız olucak
         return postDizisi.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!        //feed kısmındaki başlangıçta gösterilecekleri ayarladık
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {//cellde hangileri gösterilecek
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PaylasimCell      //feed kısmındaki başlangıçta gösterilecekleri ayarladık
         cell.emailText.text = postDizisi[indexPath.row].email
         cell.yorumText.text = postDizisi[indexPath.row].yorum
         cell.postImageView.sd_setImage(with: URL(string: self.postDizisi[indexPath.row].gorselUrl))

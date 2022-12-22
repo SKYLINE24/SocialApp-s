@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>327864062468-97l88igsva7raqrlustc19lulj0v27kh.apps.googleusercontent.com</string>
+	<string>161232945704-1khsm15inhb8vu3n5qnt4mb4oubvj744.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.327864062468-97l88igsva7raqrlustc19lulj0v27kh</string>
+	<string>com.googleusercontent.apps.161232945704-1khsm15inhb8vu3n5qnt4mb4oubvj744</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBBE9qjSvf63AcMn4LKcR4PkoEHA7-kvF8</string>
+	<string>AIzaSyA7j7rsv9UqCFqoAPaIfAF_sG9ryann0zc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>327864062468</string>
+	<string>161232945704</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.erbilcan.SocialApp-s</string>
 	<key>PROJECT_ID</key>
-	<string>socialapp-s</string>
+	<string>socialapp-s-e3c46</string>
 	<key>STORAGE_BUCKET</key>
-	<string>socialapp-s.appspot.com</string>
+	<string>socialapp-s-e3c46.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:327864062468:ios:afe453ba2450090e4b5b51</string>
+	<string>1:161232945704:ios:ec436a6725d538a6322b1d</string>
 </dict>
 </plist>

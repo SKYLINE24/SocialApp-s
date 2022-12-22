@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import Firebase
 
 class AyarlarVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     @IBAction func cikisYapTiklandi(_ sender: Any) {
-        
+        do{
+            try Auth.auth().signOut()//kullanıcıdan çıkış yapmış oluyoruz butona tıkladığımızda, izlyeceğimiz segue de aşşağıda, kullanıcı uygulamaya tekrar girdiğinde giriş yapması gerekecek
+            performSegue(withIdentifier: "toVC", sender: nil)
+        }catch{
+            print("Hata")
+        }
     }
     
 

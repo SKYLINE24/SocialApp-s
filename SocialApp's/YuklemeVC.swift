@@ -13,7 +13,7 @@ import FirebaseAuth
 class YuklemeVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var aciklamaTextField: UITextField!
+    @IBOutlet weak var yorumTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,14 +60,14 @@ class YuklemeVC: UIViewController ,UIImagePickerControllerDelegate, UINavigation
                             
                             if let imageUrl = imageUrl{
                                 let firestoreDatabase = Firestore.firestore()
-                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.aciklamaTextField.text!, "email" : Auth.auth().currentUser!.email, "tarih" : FieldValue.serverTimestamp()] as [String : Any]
+                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "email" : Auth.auth().currentUser!.email, "tarih" : FieldValue.serverTimestamp()] as [String : Any]
                                 
                                 firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
                                     if error != nil{
                                         self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
                                     }else{
                                         self.imageView.image = UIImage(named: "erbil")
-                                        self.aciklamaTextField.text = ""
+                                        self.yorumTextField.text = ""
                                         self.tabBarController?.selectedIndex = 0
                                     }
                                 }

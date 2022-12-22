@@ -1,14 +1,13 @@
 //
-//  FeedCell.swift
+//  FeedCellTableViewCell.swift
 //  SocialApp's
 //
-//  Created by Erbil Can on 16.12.2022.
+//  Created by Erbil Can on 18.12.2022.
 //
 
 import UIKit
 
-class FeedCell: UIViewController {
-    
+class FeedCellTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +19,5 @@ class FeedCell: UIViewController {
 
         // Configure the view for the selected state
     }
-    */
 
 }

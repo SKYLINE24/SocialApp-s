@@ -90,25 +90,25 @@
                     <connections>
                         <outlet property="emailTextField" destination="Sn1-IY-3Us" id="twP-Ve-4AJ"/>
                         <outlet property="sifreTextField" destination="Sk4-Ld-v5l" id="D4N-Uo-Q6V"/>
-                        <segue destination="Iqh-Tf-nLc" kind="presentation" identifier="toPaylasimlarVC" id="G0l-LY-cG6"/>
+                        <segue destination="Iqh-Tf-nLc" kind="presentation" identifier="toPaylasimVC" modalPresentationStyle="fullScreen" id="G0l-LY-cG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1598" y="-268"/>
+            <point key="canvasLocation" x="-1590" y="-210"/>
         </scene>
-        <!--Yükleme-->
+        <!--YuklemeVC-->
         <scene sceneID="2Gf-iY-8GH">
             <objects>
-                <viewController id="FUY-ab-pHW" customClass="YuklemeVC" customModule="SocialApp_s" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FUY-ab-pHW" userLabel="YuklemeVC" customClass="YuklemeVC" customModule="SocialApp_s" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zA9-Fh-bAe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Görsel Sec" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-ls-1qo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gorselSec" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-ls-1qo">
                                 <rect key="frame" x="16" y="91" width="361" height="257"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Açıklama" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXV-V4-o4D">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yorum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXV-V4-o4D">
                                 <rect key="frame" x="16" y="432" width="361" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Vdo-5x-qvC"/>
@@ -145,13 +145,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Yükleme" image="shared.with.you" catalog="system" id="U2p-6S-Y0d"/>
                     <connections>
-                        <outlet property="aciklamaTextField" destination="FXV-V4-o4D" id="ezI-yx-Lvw"/>
                         <outlet property="imageView" destination="VJR-ls-1qo" id="RKs-WA-159"/>
+                        <outlet property="yorumTextField" destination="FXV-V4-o4D" id="YRE-Kx-jCI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlB-DJ-MdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="68"/>
+            <point key="canvasLocation" x="-218" y="173"/>
         </scene>
         <!--Arama-->
         <scene sceneID="grE-yB-mC2">
@@ -179,12 +179,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJD-jb-dE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562.59541984732823" y="68.309859154929583"/>
+            <point key="canvasLocation" x="436" y="173"/>
         </scene>
-        <!--Paylaşımlar-->
+        <!--PaylasimVC-->
         <scene sceneID="Z5T-ej-HOA">
             <objects>
-                <viewController id="ao1-k1-7sg" customClass="PaylasimVC" customModule="SocialApp_s" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ao1-k1-7sg" userLabel="PaylasimVC" customClass="PaylasimVC" customModule="SocialApp_s" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cU-Ve-wKd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +193,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="297" id="f0K-1C-AqY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="297" id="f0K-1C-AqY" customClass="PaylasimCell" customModule="SocialApp_s" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="297"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f0K-1C-AqY" id="gMs-Mh-wvk">
@@ -203,23 +203,23 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı Adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNS-BS-cdi">
                                                     <rect key="frame" x="20" y="11" width="190" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="DXu-8i-1to"/>
-                                                        <constraint firstAttribute="width" constant="190" id="pjc-3h-BDT"/>
+                                                        <constraint firstAttribute="height" constant="24" id="9HE-FN-zZ3"/>
+                                                        <constraint firstAttribute="width" constant="190" id="ChX-qh-ASV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-GV-XuS">
-                                                    <rect key="frame" x="20" y="40" width="353" height="158"/>
+                                                    <rect key="frame" x="20" y="40" width="353" height="192"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="353" id="VyQ-AJ-zzi"/>
+                                                        <constraint firstAttribute="width" constant="353" id="ywn-YA-3pN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Açıklama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbp-ff-S0b">
-                                                    <rect key="frame" x="20" y="206" width="353" height="33"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yorum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbp-ff-S0b">
+                                                    <rect key="frame" x="20" y="240" width="353" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="Dml-iR-8zk"/>
+                                                        <constraint firstAttribute="height" constant="33" id="GxA-Wx-dUS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -227,16 +227,21 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="trailing" secondItem="Vbp-ff-S0b" secondAttribute="trailing" id="0KD-Of-6L8"/>
-                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="top" secondItem="gMs-Mh-wvk" secondAttribute="topMargin" id="14a-ri-rGj"/>
-                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="leading" secondItem="Vbp-ff-S0b" secondAttribute="leading" id="EC7-c1-uWe"/>
-                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="leading" secondItem="gMs-Mh-wvk" secondAttribute="leadingMargin" id="Rm7-MF-eTc"/>
-                                                <constraint firstItem="Vbp-ff-S0b" firstAttribute="top" secondItem="7Mg-GV-XuS" secondAttribute="bottom" constant="8" id="gZH-jN-VIl"/>
-                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="leading" secondItem="7Mg-GV-XuS" secondAttribute="leading" id="oPi-Ys-98b"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Vbp-ff-S0b" secondAttribute="bottom" constant="47" id="u2O-gS-hVE"/>
-                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="top" secondItem="SNS-BS-cdi" secondAttribute="bottom" constant="5" id="x1a-CB-ELx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Vbp-ff-S0b" secondAttribute="bottom" constant="13" id="1U1-Nr-4ZG"/>
+                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="leading" secondItem="7Mg-GV-XuS" secondAttribute="leading" id="4VQ-S3-suR"/>
+                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="leading" secondItem="gMs-Mh-wvk" secondAttribute="leadingMargin" id="Dbh-oT-RSG"/>
+                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="trailing" secondItem="Vbp-ff-S0b" secondAttribute="trailing" id="VyD-3d-Jbl"/>
+                                                <constraint firstItem="Vbp-ff-S0b" firstAttribute="top" secondItem="7Mg-GV-XuS" secondAttribute="bottom" constant="8" id="cz1-on-5Ly"/>
+                                                <constraint firstItem="SNS-BS-cdi" firstAttribute="top" secondItem="gMs-Mh-wvk" secondAttribute="topMargin" id="kQ9-4J-TQT"/>
+                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="leading" secondItem="Vbp-ff-S0b" secondAttribute="leading" id="p21-SH-fNa"/>
+                                                <constraint firstItem="7Mg-GV-XuS" firstAttribute="top" secondItem="SNS-BS-cdi" secondAttribute="bottom" constant="5" id="xRb-EV-c7A"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailText" destination="SNS-BS-cdi" id="j7m-ke-EMI"/>
+                                            <outlet property="postImageView" destination="7Mg-GV-XuS" id="gz5-dJ-Zvc"/>
+                                            <outlet property="yorumText" destination="Vbp-ff-S0b" id="ROg-pN-xDL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -244,10 +249,10 @@
                         <viewLayoutGuide key="safeArea" id="j8B-pI-XkI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="F7H-1B-IAx" firstAttribute="centerX" secondItem="8cU-Ve-wKd" secondAttribute="centerX" id="44D-Tc-PWS"/>
-                            <constraint firstItem="F7H-1B-IAx" firstAttribute="leading" secondItem="j8B-pI-XkI" secondAttribute="leading" id="GIQ-Mm-Anb"/>
-                            <constraint firstItem="F7H-1B-IAx" firstAttribute="bottom" secondItem="j8B-pI-XkI" secondAttribute="bottom" id="keA-b9-Ayr"/>
-                            <constraint firstItem="F7H-1B-IAx" firstAttribute="top" secondItem="j8B-pI-XkI" secondAttribute="top" id="mRO-dd-Vyv"/>
+                            <constraint firstItem="F7H-1B-IAx" firstAttribute="centerX" secondItem="8cU-Ve-wKd" secondAttribute="centerX" id="1tJ-V1-pms"/>
+                            <constraint firstItem="F7H-1B-IAx" firstAttribute="top" secondItem="j8B-pI-XkI" secondAttribute="top" id="MrO-pO-6Vs"/>
+                            <constraint firstItem="F7H-1B-IAx" firstAttribute="leading" secondItem="j8B-pI-XkI" secondAttribute="leading" id="Nag-fl-US4"/>
+                            <constraint firstItem="F7H-1B-IAx" firstAttribute="bottom" secondItem="j8B-pI-XkI" secondAttribute="bottom" id="wO5-0i-T5r"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Paylaşımlar" image="shareplay" catalog="system" id="xtm-qg-TUz"/>
@@ -257,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmh-ac-OmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74.045801526717554" y="-570.42253521126759"/>
+            <point key="canvasLocation" x="-219" y="-465"/>
         </scene>
         <!--Profil-->
         <scene sceneID="fEr-SY-3A9">
@@ -274,7 +279,7 @@
                                     <constraint firstAttribute="width" constant="155" id="oMa-t4-4CT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı İsmi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-UQ-txW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kullanıcı Adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-UQ-txW">
                                 <rect key="frame" x="16" y="59" width="136" height="36.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -308,9 +313,12 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Resimler"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-7l-aKp">
-                                <rect key="frame" x="305.66666666666669" y="60" width="76.333333333333314" height="34.333333333333343"/>
+                                <rect key="frame" x="296" y="60" width="86" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Ayarlar"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Düzenle"/>
+                                <connections>
+                                    <segue destination="m6k-RF-G1e" kind="show" id="Kiy-Xu-HF8"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-no-l2l">
                                 <rect key="frame" x="0.0" y="358" width="393" height="411"/>
@@ -371,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YW0-Zo-WGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562.59541984732823" y="-570.42253521126759"/>
+            <point key="canvasLocation" x="436" y="-465"/>
         </scene>
         <!--Ayarlar-->
         <scene sceneID="UfO-6x-hju">
@@ -387,7 +395,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Çıkış Yap"/>
                                 <connections>
                                     <action selector="cikisYapTiklandi:" destination="dOO-kR-VmY" eventType="touchUpInside" id="2eH-RH-2h6"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="uZJ-dI-Ehm"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toVC" id="uZJ-dI-Ehm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -403,7 +411,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rB-SW-YXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185.4961832061069" y="-268.3098591549296"/>
+            <point key="canvasLocation" x="1111" y="173"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Bs-5U-UB4">
+            <objects>
+                <viewController id="m6k-RF-G1e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="buo-Y5-1ST">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gorselSec" translatesAutoresizingMaskIntoConstraints="NO" id="iCv-8l-l12">
+                                <rect key="frame" x="16" y="91" width="361" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Açıklama" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-bu-1TY">
+                                <rect key="frame" x="16" y="342" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Kullanıcı Adı" borderStyle="roundedRect" placeholder="Açıklama" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWx-Ej-hR5">
+                                <rect key="frame" x="16" y="20" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MbL-av-ipF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZiD-nI-fjX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzx-OI-cVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="-531"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BuB-tw-whf">
@@ -425,12 +467,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQv-MW-ksO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802" y="-268"/>
+            <point key="canvasLocation" x="-879" y="-163"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Görsel Sec" width="1600" height="1200"/>
         <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="gorselSec" width="1600" height="1200"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="shared.with.you" catalog="system" width="128" height="93"/>

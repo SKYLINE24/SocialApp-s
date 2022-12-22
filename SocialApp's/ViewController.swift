@@ -17,22 +17,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    func hataMesaji(titleInput: String, messageInput: String){
-        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
-        
-        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okButton)
-        present(alert, animated: true, completion: nil)
-        
-        
-    }
-    @IBAction func girisYapildi(_ sender: Any) {
+    
+    @IBAction func girisYapTiklandi(_ sender: Any) {
         if emailTextField.text != "" && sifreTextField.text != ""{
             Auth.auth().signIn(withEmail: emailTextField.text!, password: sifreTextField.text!){ (authdataresult, error) in
                 if error != nil{
                     self.hataMesaji(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata aldınız. Tekrar deneyiniz")
                 }else{
-                    self.performSegue(withIdentifier: "toPaylasimlarVC", sender: nil)
+                    self.performSegue(withIdentifier: "toPaylasimVC", sender: nil)
                 }
             }
         }
@@ -45,17 +37,21 @@ class ViewController: UIViewController {
                 if error != nil{
                     self.hataMesaji(titleInput: "Hata", messageInput: error!.localizedDescription)
                 }else{
-                    self.performSegue(withIdentifier: "toPaylasimlarVC", sender: nil)
+                    self.performSegue(withIdentifier: "toPaylasimVC", sender: nil)
                 }
             }
         }else{
             hataMesaji(titleInput: "Hata", messageInput: "Email ve şifre giriniz")
         }
     }
-    
-    
-   
-    
+    func hataMesaji(titleInput: String, messageInput: String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+       
+    }
 
 }
 
