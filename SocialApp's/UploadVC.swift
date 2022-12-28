@@ -1,5 +1,5 @@
 //
-//  YuklemeVC.swift
+//  UploadVC.swift
 //  SocialApp's
 //
 //  Created by Erbil Can on 12.12.2022.
@@ -10,14 +10,18 @@ import Firebase
 import FirebaseStorage
 import FirebaseAuth
 
-class YuklemeVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var kullaniciAdiLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var yorumTextField: UITextField!
+    var userDizisi = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        usernameBulma()
+        
         imageView.isUserInteractionEnabled = true         // kullanıcı resme tıkladığında işlem yapabilir hale getiriyoruz
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gorselSec))       //jest algılayıcı(tıklama algılayıcı)
         imageView.addGestureRecognizer(gestureRecognizer)
@@ -56,19 +60,18 @@ class YuklemeVC: UIViewController ,UIImagePickerControllerDelegate, UINavigation
                     imageReferance.downloadURL { (url, error) in
                         if error == nil{
                             let imageUrl = url?.absoluteString//url nin stringe çevrilmiş hali
-                            
-                            
+                          
                             if let imageUrl = imageUrl{
                                 let firestoreDatabase = Firestore.firestore()
-                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "email" : Auth.auth().currentUser!.email, "tarih" : FieldValue.serverTimestamp()] as [String : Any]
-                                
-                                firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
-                                    if error != nil{
-                                        self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
-                                    }else{
-                                        self.imageView.image = UIImage(named: "erbil")
-                                        self.yorumTextField.text = ""
-                                        self.tabBarController?.selectedIndex = 0
+                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "tarih" : FieldValue.serverTimestamp(), "username" : self.kullaniciAdiLabel.text!, "email" : Auth.auth().currentUser!.email] as [String : Any]
+                                            firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
+                                                    if error != nil{
+                                                        self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                                                    }else{
+                                                        self.imageView.image = UIImage(named: "gorselSec")
+                                                        self.yorumTextField.text = ""
+                                                        self.tabBarController?.selectedIndex = 0
+                                                    }
                                     }
                                 }
                             }
@@ -77,8 +80,19 @@ class YuklemeVC: UIViewController ,UIImagePickerControllerDelegate, UINavigation
                 }
             }
         }
+    func usernameBulma(){
+        let firestoreDatabase = Firestore.firestore()
+        let docRef = firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid)
+
+                docRef.getDocument(source: .cache) { (document, error) in
+                    if let document = document {
+                        self.kullaniciAdiLabel.text = document.get("username") as! String
+                    } else {
+                        print("Document does not exist in cache")
+                    }
+                }
     }
-    
+
     
     func hataMesajiGoster(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

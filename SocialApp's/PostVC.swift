@@ -1,5 +1,5 @@
 //
-//  PaylasimVC.swift
+//  PostVC.swift
 //  SocialApp's
 //
 //  Created by Erbil Can on 12.12.2022.
@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PostVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var postDizisi = [Post]()
@@ -24,12 +24,11 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func firebaseVerileriAl(){
         let firestoreDatabase = Firestore.firestore()//database değişkenimizi oluşturduk
-        
         firestoreDatabase.collection("Post").order(by: "tarih", descending: true)
             .addSnapshotListener { (snapshot, error) in
             //Firestoredaki döküman çekme işlemini burda gerçekleştirdik
             if error != nil{
-                print(error?.localizedDescription)
+                print(error?.localizedDescription )
             }else{
                 if snapshot?.isEmpty != true && snapshot != nil{//snapshat boş mu değil mi burada onu kontrol ediyoruz
                     //her feed sayfasına geçtiğinde üstüne ekleyecek olduğu için silip aşşağıda tekrar yüklenmesini sağlıyoruz aşşağıdaki kod ile
@@ -37,8 +36,8 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     for document in snapshot!.documents{
                         if let gorselUrl = document.get("gorselUrl") as? String{
                             if let yorum = document.get("yorum") as? String{
-                                if let email = document.get("email") as? String{
-                                    let post = Post(email: email, yorum: yorum, gorselUrl: gorselUrl)
+                                if let username = document.get("username") as? String{
+                                    let post = Post(username: username, yorum: yorum, gorselUrl: gorselUrl)
                                     self.postDizisi.append(post)
                                 }
                             }
@@ -55,10 +54,11 @@ class PaylasimVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {//cellde hangileri gösterilecek
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PaylasimCell      //feed kısmındaki başlangıçta gösterilecekleri ayarladık
-        cell.emailText.text = postDizisi[indexPath.row].email
-        cell.yorumText.text = postDizisi[indexPath.row].yorum
-        cell.postImageView.sd_setImage(with: URL(string: self.postDizisi[indexPath.row].gorselUrl))
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostCell      //feed kısmındaki başlangıçta gösterilecekleri ayarladık
+        cell.usernameText.text = postDizisi[indexPath.row].username
+        cell.yorumTextField.text = postDizisi[indexPath.row].yorum
+        let gorselUrl = postDizisi[indexPath.row].gorselUrl
+        cell.postImageView.sd_setImage(with: URL(string: gorselUrl))
         return cell
     }
     

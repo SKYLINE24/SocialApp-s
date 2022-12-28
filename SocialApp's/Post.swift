@@ -8,12 +8,12 @@
 import Foundation
 class Post {
     
-    var email : String
+    var username : String
     var yorum : String
     var gorselUrl : String
     
-    init(email: String, yorum: String, gorselUrl: String) {
-        self.email = email
+    init(username: String, yorum: String, gorselUrl: String) {
+        self.username = username
         self.yorum = yorum
         self.gorselUrl = gorselUrl
     }

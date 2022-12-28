@@ -1,5 +1,5 @@
 //
-//  PaylasimCell.swift
+//  PostCell.swift
 //  SocialApp's
 //
 //  Created by Erbil Can on 22.12.2022.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class PaylasimCell: UITableViewCell {
+class PostCell: UITableViewCell {
 
-    @IBOutlet weak var yorumText: UILabel!
+    
+    @IBOutlet weak var yorumTextField: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var emailText: UILabel!
+    @IBOutlet weak var usernameText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

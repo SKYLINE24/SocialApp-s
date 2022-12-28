@@ -10,38 +10,55 @@ import Firebase
 
 
 class ViewController: UIViewController {
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var sifreTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    
+    
     @IBAction func girisYapTiklandi(_ sender: Any) {
         if emailTextField.text != "" && sifreTextField.text != ""{
-            Auth.auth().signIn(withEmail: emailTextField.text!, password: sifreTextField.text!){ (authdataresult, error) in
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: sifreTextField.text!){
+                (AuthDataResult, error) in
                 if error != nil{
                     self.hataMesaji(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata aldınız. Tekrar deneyiniz")
                 }else{
-                    self.performSegue(withIdentifier: "toPaylasimVC", sender: nil)
+                    self.performSegue(withIdentifier: "toPostVC", sender: nil)
                 }
             }
         }
     }
-    @IBAction func kayitOlTiklandi(_ sender: Any) {
-        if emailTextField.text != "" && sifreTextField.text != "" {
-            
-            //kullanıcı kayıt işlemleri
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: sifreTextField.text!) { authdataresult, error in
-                if error != nil{
+    
+    
+    
+    @IBAction func kayitOlTiklandi(_ sender: Any) {//kullanıcıyı Authentication a kaydedip aynı zamanda firebase e User koleksiyonunu oluşturuyoruz
+        if emailTextField.text != "" && sifreTextField.text != "" && usernameTextField.text != "" {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: sifreTextField.text!){
+                (AuthDataResult, error) in
+                if error != nil {
                     self.hataMesaji(titleInput: "Hata", messageInput: error!.localizedDescription)
-                }else{
-                    self.performSegue(withIdentifier: "toPaylasimVC", sender: nil)
                 }
+                else{
+                    let firestoreDatabase = Firestore.firestore()
+                    let firestoreUser = ["userID" : Auth.auth().currentUser?.uid , "profileImage" : "", "profileDescription" : "" , "username" : self.usernameTextField.text! , "email" : self.emailTextField.text! , "createDate" : FieldValue.serverTimestamp()] as [String : Any]
+                    firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid).setData(firestoreUser) { (error) in
+                        if error != nil{
+                            self.hataMesaji(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                        }else{
+                            self.usernameTextField.text = ""
+                            self.emailTextField.text = ""
+                            self.sifreTextField.text = ""
+                        }
+                    }
+                    self.performSegue(withIdentifier: "toPostVC", sender: nil)
+                }
+                
             }
-        }else{
-            hataMesaji(titleInput: "Hata", messageInput: "Email ve şifre giriniz")
+            //kullanıcı kayıt işlemleri
         }
     }
     func hataMesaji(titleInput: String, messageInput: String){
