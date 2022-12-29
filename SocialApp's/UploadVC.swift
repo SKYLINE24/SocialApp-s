@@ -12,10 +12,10 @@ import FirebaseAuth
 
 class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var kullaniciAdiLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var yorumTextField: UITextField!
-    var userDizisi = [User]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
                           
                             if let imageUrl = imageUrl{
                                 let firestoreDatabase = Firestore.firestore()
-                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "tarih" : FieldValue.serverTimestamp(), "username" : self.kullaniciAdiLabel.text!, "email" : Auth.auth().currentUser!.email] as [String : Any]
+                                let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "tarih" : FieldValue.serverTimestamp(), "username" : self.usernameLabel.text!, "email" : Auth.auth().currentUser!.email] as [String : Any]
                                             firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
                                                     if error != nil{
                                                         self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
@@ -80,20 +80,19 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
                 }
             }
         }
+    
     func usernameBulma(){
         let firestoreDatabase = Firestore.firestore()
         let docRef = firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid)
 
                 docRef.getDocument(source: .cache) { (document, error) in
                     if let document = document {
-                        self.kullaniciAdiLabel.text = document.get("username") as! String
+                        self.usernameLabel.text = document.get("username") as! String
                     } else {
                         print("Document does not exist in cache")
                     }
                 }
     }
-
-    
     func hataMesajiGoster(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
@@ -101,4 +100,5 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
+    
 }
