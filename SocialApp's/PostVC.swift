@@ -47,7 +47,6 @@ class PostVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }  //databasedeki post klasörüne kulaşabiliyorum şuan
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//kaç satırımız olucak
         return postDizisi.count

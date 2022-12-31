@@ -55,7 +55,7 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
             imageReferance.putData(data, metadata: nil) { (storagemetadata, error) in
                 //.pudData seçeneğinde metadata ve completion seçeneğini seçiyoruz değerleri (data , nil) 3. seçenekte enter ı tıklıyoruz
                 if error != nil{
-                    self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyin")
+                    self.mesajGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyin")
                 }else{
                     imageReferance.downloadURL { (url, error) in
                         if error == nil{
@@ -66,7 +66,7 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
                                 let firestorePost = ["gorselUrl" : imageUrl, "yorum" : self.yorumTextField.text!, "tarih" : FieldValue.serverTimestamp(), "username" : self.usernameLabel.text!, "email" : Auth.auth().currentUser!.email] as [String : Any]
                                             firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
                                                     if error != nil{
-                                                        self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                                                        self.mesajGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
                                                     }else{
                                                         self.imageView.image = UIImage(named: "gorselSec")
                                                         self.yorumTextField.text = ""
@@ -93,7 +93,7 @@ class UploadVC: UIViewController ,UIImagePickerControllerDelegate, UINavigationC
                     }
                 }
     }
-    func hataMesajiGoster(title: String, message: String){
+    func mesajGoster(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)

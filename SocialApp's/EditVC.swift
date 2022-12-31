@@ -45,7 +45,7 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             let imageReferance = mediaFolder.child("\(uuid).jpg")
             imageReferance.putData(data, metadata: nil) { (storagemetadata, error) in
                 if error != nil{
-                    self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyin")
+                    self.mesajGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyin")
                 }else{
                     imageReferance.downloadURL { (url, error) in
                         if error == nil{
@@ -56,13 +56,11 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                 let firestoreUser = ["profileImage" : imageUrl, "profileDescription" : self.profileDescriptionTextField.text! ] as [String : Any]
                                 firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid).updateData(firestoreUser) { (error) in
                                     if error != nil{
-                                        self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                                        self.mesajGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
                                     }else{
-                                        self.profileImageView.image = UIImage(named: "gorselSec")
-                                        self.profileDescriptionTextField.text = ""
-                                        self.tabBarController?.selectedIndex = 3
+                                        self.mesajGoster(title: "Onaylandı", message: error?.localizedDescription ?? "Değişiklikler kaydedildi, Profile Geçebilirsiniz")
                                     }
-                                }
+                                 }
                             }
                         }
                     }
@@ -74,7 +72,7 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
-    func hataMesajiGoster(title: String, message: String){
+    func mesajGoster(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)

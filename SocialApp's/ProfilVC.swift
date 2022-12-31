@@ -19,11 +19,12 @@ class ProfilVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseVerileriAl()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        firebaseVerileriAl()//sayfa her açıldığında mesela editten geri döndüğünde de çalışacak wievdidload da sayfa ilk açıldığında çalışır sadece
+    }
     
-
     func firebaseVerileriAl(){
         let firestoreDatabase = Firestore.firestore()
         let docRef = firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid)
@@ -39,7 +40,7 @@ class ProfilVC: UIViewController {
                 }
             }
     }
-    func hataMesajiGoster(title: String, message: String){
+    func mesajGoster(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
