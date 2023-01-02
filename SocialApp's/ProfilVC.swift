@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FirebaseStorage
 
 class ProfilVC: UIViewController {
 
@@ -20,10 +21,25 @@ class ProfilVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         firebaseVerileriAl()//sayfa her açıldığında mesela editten geri döndüğünde de çalışacak wievdidload da sayfa ilk açıldığında çalışır sadece
     }
+    
+    @IBAction func takipEtTiklandi(_ sender: Any) {
+        let uuid = UUID().uuidString
+        let firestoreDatabase = Firestore.firestore()
+        let firestorePost = ["email" : Auth.auth().currentUser!.email] as [String : Any]
+            firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
+            if error != nil{
+                self.mesajGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+            }else{
+                self.tabBarController?.selectedIndex = 3
+            }
+        }
+    }
+    
     
     func firebaseVerileriAl(){
         let firestoreDatabase = Firestore.firestore()
@@ -36,7 +52,7 @@ class ProfilVC: UIViewController {
                     self.imageView.sd_setImage(with: URL(string: self.profileImage))
                     self.descriptionLabel.text = self.profileDescription
                 }else {
-                    print("Document does not exist in cache")
+                    self.mesajGoster(title: "Hata", message: "Belgeler Bulunamadı!")
                 }
             }
     }

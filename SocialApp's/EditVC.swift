@@ -15,9 +15,13 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileDescriptionTextField: UITextField!
     
+    var profileDescription = ""
+    var profileImage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImageView.isUserInteractionEnabled = true
+        firebaseVerileriAl()
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gorselSec))
         profileImageView.addGestureRecognizer(gestureRecognizer)
     }
@@ -36,7 +40,7 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.dismiss(animated: true,completion: nil)
     }
     
-    @IBAction func kaydetTiklandi(_ sender: Any) {
+    @IBAction func kaydetTiklandi(_ sender: Any) {//kaydet butonuna tıklandığında kullanıcının kaydetmek istediği açıklama ve profil fotoğrafı kaydolur
         let storage = Storage.storage()
         let storageReferance = storage.reference()
         let mediaFolder = storageReferance.child("media")
@@ -50,7 +54,6 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     imageReferance.downloadURL { (url, error) in
                         if error == nil{
                             let imageUrl = url?.absoluteString//url nin stringe çevrilmiş hali
-                          
                             if let imageUrl = imageUrl{
                                 let firestoreDatabase = Firestore.firestore()
                                 let firestoreUser = ["profileImage" : imageUrl, "profileDescription" : self.profileDescriptionTextField.text! ] as [String : Any]
@@ -67,8 +70,30 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 }
             }
         }
-        
-        
+    }
+    
+    func firebaseVerileriAl(){//kullanıcının önceden verileri varsa düzenle butonun tıklanınca otomatik getirmek için
+        let firestoreDatabase = Firestore.firestore()
+        let docRef = firestoreDatabase.collection("User").document(Auth.auth().currentUser!.uid)
+            docRef.getDocument(source: .cache){ (document, error) in
+                if let document = document{
+                    self.profileDescription = document.get("profileDescription") as! String
+                    self.profileImage = document.get("profileImage") as! String
+                    if self.profileDescription != nil{
+                        self.profileDescriptionTextField.text = self.profileDescription
+                    }else{
+                        self.profileDescriptionTextField.text = ""
+                    }
+                    if self.profileImage != nil{
+                        self.profileImageView.sd_setImage(with: URL(string: self.profileImage))
+                    }else{
+                        self.profileDescriptionTextField.text = ""
+                    }
+                    
+                }else {
+                    self.mesajGoster(title: "Hata", message: "Belgeler Bulunamadı!")
+                }
+            }
     }
     
     
