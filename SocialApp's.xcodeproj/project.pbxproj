@@ -12,7 +12,7 @@
 		2D1A0A13293BCCD500ECCE61 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A12293BCCD500ECCE61 /* FirebaseStorage */; };
 		2D1A0A16293BCD2B00ECCE61 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A15293BCD2B00ECCE61 /* SDWebImage */; };
 		2D1A0A18293BCD2B00ECCE61 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D1A0A17293BCD2B00ECCE61 /* SDWebImageMapKit */; };
-		2D1CF64B2954BE710080493B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1CF64A2954BE710080493B /* Post.swift */; };
+		2D1CF64B2954BE710080493B /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1CF64A2954BE710080493B /* Classes.swift */; };
 		2D1CF64D2954E0730080493B /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1CF64C2954E0730080493B /* EditVC.swift */; };
 		2D2F1242294783AF000C7901 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F1241294783AF000C7901 /* PostVC.swift */; };
 		2D2F1244294783F1000C7901 /* ProfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F1243294783F1000C7901 /* ProfilVC.swift */; };
@@ -26,11 +26,13 @@
 		2D32B547292F52BC00129BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D32B545292F52BC00129BAB /* LaunchScreen.storyboard */; };
 		2D3421DB2954756B007F2687 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D3421DA2954756B007F2687 /* GoogleService-Info.plist */; };
 		2D3421DD29547E85007F2687 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3421DC29547E85007F2687 /* PostCell.swift */; };
+		2D8E6BBB2967730500DD9CC6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E6BBA2967730500DD9CC6 /* ProfileCell.swift */; };
 		2DB21158295D6901000C6FC9 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB21157295D6901000C6FC9 /* SearchVC.swift */; };
+		2DE2E867296B4BE80037369F /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2E866296B4BE80037369F /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D1CF64A2954BE710080493B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2D1CF64A2954BE710080493B /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		2D1CF64C2954E0730080493B /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		2D2F1241294783AF000C7901 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		2D2F1243294783F1000C7901 /* ProfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilVC.swift; sourceTree = "<group>"; };
@@ -46,7 +48,9 @@
 		2D32B548292F52BC00129BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D3421DA2954756B007F2687 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D3421DC29547E85007F2687 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		2D8E6BBA2967730500DD9CC6 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		2DB21157295D6901000C6FC9 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		2DE2E866296B4BE80037369F /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +94,13 @@
 				2D2F124529478442000C7901 /* UploadVC.swift */,
 				2D2F1241294783AF000C7901 /* PostVC.swift */,
 				2D3421DC29547E85007F2687 /* PostCell.swift */,
-				2D1CF64A2954BE710080493B /* Post.swift */,
 				2D2F1243294783F1000C7901 /* ProfilVC.swift */,
+				2D8E6BBA2967730500DD9CC6 /* ProfileCell.swift */,
 				2D1CF64C2954E0730080493B /* EditVC.swift */,
 				2DB21157295D6901000C6FC9 /* SearchVC.swift */,
+				2DE2E866296B4BE80037369F /* SearchCell.swift */,
 				2D2F124929478553000C7901 /* SettingsVC.swift */,
+				2D1CF64A2954BE710080493B /* Classes.swift */,
 				2D32B540292F52BB00129BAB /* Main.storyboard */,
 				2D32B543292F52BC00129BAB /* Assets.xcassets */,
 				2D32B545292F52BC00129BAB /* LaunchScreen.storyboard */,
@@ -189,13 +195,15 @@
 			files = (
 				2D2F1244294783F1000C7901 /* ProfilVC.swift in Sources */,
 				2DB21158295D6901000C6FC9 /* SearchVC.swift in Sources */,
-				2D1CF64B2954BE710080493B /* Post.swift in Sources */,
+				2D1CF64B2954BE710080493B /* Classes.swift in Sources */,
+				2DE2E867296B4BE80037369F /* SearchCell.swift in Sources */,
 				2D2F1242294783AF000C7901 /* PostVC.swift in Sources */,
 				2D1CF64D2954E0730080493B /* EditVC.swift in Sources */,
 				2D3421DD29547E85007F2687 /* PostCell.swift in Sources */,
 				2D32B53F292F52BB00129BAB /* ViewController.swift in Sources */,
 				2D32B53B292F52BB00129BAB /* AppDelegate.swift in Sources */,
 				2D32B53D292F52BB00129BAB /* SceneDelegate.swift in Sources */,
+				2D8E6BBB2967730500DD9CC6 /* ProfileCell.swift in Sources */,
 				2D2F124629478442000C7901 /* UploadVC.swift in Sources */,
 				2D2F124A29478553000C7901 /* SettingsVC.swift in Sources */,
 			);
