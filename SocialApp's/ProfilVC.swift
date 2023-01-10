@@ -37,7 +37,7 @@ class ProfilVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     
-    
+    /*
     @IBAction func takipEtTiklandi(_ sender: Any) {
         let uuid = UUID().uuidString
         let firestoreDatabase = Firestore.firestore()
@@ -49,7 +49,7 @@ class ProfilVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 self.tabBarController?.selectedIndex = 3
             }
         }
-    }
+    }*/
     
     func firebaseVerileriAl(){
         let firestoreDatabase = Firestore.firestore()
@@ -88,7 +88,7 @@ class ProfilVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {//kaç satırımız olucak
-        self.postofNumberLabel.text = "\(postDizisi.count.self)"
+        self.postofNumberLabel.text = "Gönderiler: \(postDizisi.count.self)"
         return postDizisi.count
     }
     
